@@ -1,12 +1,6 @@
 #include<stdio.h>
 #include<time.h>
-int n=1000;
-void delay(){
-    long i,j,k,l;
-    for(i=0;i<1000;i++){
-        for(j=0;j<100000;j++);
-    }
-}
+
 void sort(int x){
     int n=x;
     int a[n],max,i,j,k;
@@ -14,9 +8,9 @@ void sort(int x){
     a[i]=i+1;
     double start,end;
     start = clock();
-    for(i=0;i<n-1;i++){
+    for(i=0;i<(n-1);i++){
         max=a[i];
-        for(j=i+1;j<n;j++){
+        for(j=(i+1);j<n;j++){
             if(max<a[j]){
                 max=a[j];
                 k=j;
@@ -30,8 +24,7 @@ void sort(int x){
     }
     end = clock();
     printf("%f\n",(end-start)/CLOCKS_PER_SEC);
-    for(int i=0;i<n;i++)
-    printf("%d\t",a[i]);
+    
     n=n+1000;
 }
 void main(){
